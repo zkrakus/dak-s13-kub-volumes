@@ -14,4 +14,10 @@ spec:
     spec: 
       containers:
         - name: story
-          image: zkrakus/kub-data-demo:latest
+          image: zkrakus/kub-data-demo:1
+          columeMounts:
+            - mountPath: /app/story
+              name: story-volume
+      volumes:
+        - name: story-volume
+          emptyDir: {}
